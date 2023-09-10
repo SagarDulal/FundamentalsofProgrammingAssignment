@@ -5,12 +5,19 @@ public class StudentMarksStatistics
 
     public static void main(String[] args){
         
+        double highestMarks;
+        double lowestMarks; 
+        double mean; 
+        double standardDeviation;
+        
         
         
         // F1: Allows the user to input the assessment name
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the assignment name");
         String assessmentName = input.nextLine();
+        System.out.println("You are required to enter the marks of 30 students");
+
         
         
         
@@ -22,7 +29,6 @@ public class StudentMarksStatistics
             double mark;
             do {
                 try {
-                    System.out.println("You are required to enter the marks of 30 students");
                     System.out.println("Enter the student marks from 0 to 30");
                     mark = input.nextDouble(); // Asking user to input the marks of students. 
                     if (mark < 0 || mark > 30) {
@@ -47,12 +53,31 @@ public class StudentMarksStatistics
             System.out.printf("Student %2d: %.2f\n", (i + 1), marks[i]);
 
         }
-        
-        
-        
-        
+    
+        //F5: Finding the highest and lowest marks
+        HighestAndLowestMarks(marks);
         
     
     }
+            // Finding the highest marks and lowest marks 
+
+    private static void HighestAndLowestMarks(double[] marks) {
+    
+        double highestMark = marks[0];
+        double lowestMark = marks[0];
+
+        for (int i = 1; i < marks.length; i++) {
+        
+            double mark = marks[i];
+            if (mark > highestMark) {
+                highestMark = mark;
+            }
+            if (mark < lowestMark) {
+            lowestMark = mark;
+            }
+        }
+        System.out.println("The highest marks is " + highestMark);
+        System.out.println("The lowest marks is " + lowestMark);
+}
     
 }
