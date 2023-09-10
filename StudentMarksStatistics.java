@@ -11,15 +11,12 @@ public class StudentMarksStatistics
         double standardDeviation;
         
         
-        
         // F1: Allows the user to input the assessment name
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the assignment name");
         String assessmentName = input.nextLine();
         System.out.println("You are required to enter the marks of 30 students");
 
-        
-        
         
         
         //F2: Add student marks for 30 students.
@@ -37,8 +34,8 @@ public class StudentMarksStatistics
                 } catch (java.util.InputMismatchException e) {
                     System.out.println("Invalid input. Please Enter a number between 0 and 30 only");
                     System.out.println(e);
-                    input.nextLine(); // Clear the invalid input from the scanner buffer
-                    mark = -1; // Assign a value that will trigger the do-while loop to repeat
+                    input.nextLine(); // Clearing out the invalid input from the buffer
+                    mark = -1; // Triggering the do-while loop to repeat.
                 }
             } while (mark < 0 || mark > 30);
             marks[i] = mark;
@@ -59,15 +56,15 @@ public class StudentMarksStatistics
         
     
     }
-            // Finding the highest marks and lowest marks 
+    
+    // Finding the highest marks and lowest marks 
 
     private static void HighestAndLowestMarks(double[] marks) {
     
         double highestMark = marks[0];
         double lowestMark = marks[0];
 
-        for (int i = 1; i < marks.length; i++) {
-        
+        for (int i = 1; i < marks.length; i++) {    
             double mark = marks[i];
             if (mark > highestMark) {
                 highestMark = mark;
@@ -78,6 +75,9 @@ public class StudentMarksStatistics
         }
         System.out.println("The highest marks is " + highestMark);
         System.out.println("The lowest marks is " + lowestMark);
-}
+    }
     
+    private static void MeanAndStandardDeviation(double[] marks){
+        
+    }
 }
