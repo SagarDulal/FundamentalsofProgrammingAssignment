@@ -31,7 +31,7 @@ public class StudentMarksStatistics
                     if (mark < 0 || mark > 30) {
                         System.out.println("Please input a number between 0 and 30 only");
                     }
-                } catch (java.util.InputMismatchException e) {
+                } catch (InputMismatchException e) {
                     System.out.println("Invalid input. Please Enter a number between 0 and 30 only");
                     System.out.println(e);
                     input.nextLine(); // Clearing out the invalid input from the buffer
@@ -53,6 +53,7 @@ public class StudentMarksStatistics
     
         //F5: Finding the highest and lowest marks
         HighestAndLowestMarks(marks);
+        MeanAndStandardDeviation(marks);
         
     
     }
@@ -79,9 +80,16 @@ public class StudentMarksStatistics
     
     private static void MeanAndStandardDeviation(double[] marks){
         
-        double mean;
-        double standardDeviation;
+
+        double totalMarks = 0;
         
+        // Calculating the mean
+        for (int i = 0; i < marks.length; i++) {
+            totalMarks += marks[i];
+        }
         
+        double mean = totalMarks/marks.length;
+        System.out.printf("Mean Mark: %.2f\n", mean);
+
     }
 }
