@@ -79,5 +79,9 @@ public class StudentMarksStatistics
     
     private static void MeanAndStandardDeviation(double[] marks){
         
+        double mean;
+        double standardDeviation;
+        
+        
     }
 }
