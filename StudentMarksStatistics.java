@@ -89,7 +89,18 @@ public class StudentMarksStatistics
         }
         
         double mean = totalMarks/marks.length;
-        System.out.printf("Mean Mark: %.2f\n", mean);
+        System.out.printf("Mean: %.2f\n", mean);
+        
+        double sumSquaredDiff = 0.0; // Variable to store the sum of squared differences
+         for (int i = 0; i < marks.length; i++) {
+            double difference = marks[i] - mean; // Calculating the differences between each marks and the mean
+            sumSquaredDiff += difference * difference; // Summing the squared differences 
+        }
 
+        double variance = sumSquaredDiff / marks.length; // Calculating the variance
+        double standardDeviation = Math.sqrt(variance); // Calculating the standard deviation
+
+        System.out.printf("Standard Deviation: %.2f\n", standardDeviation);
+        
     }
 }
